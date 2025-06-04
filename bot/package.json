@@ -1,0 +1,41 @@
+{
+  "name": "discord-bot",
+  "version": "0.0.1",
+  "description": "DAO Discord bot for the Veridian Recovery DAO. Provides initial interface for our Addiction Recovery AI Chatbot.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Veridian-Recovery-DAO/discord-bot.git"
+  },
+  "author": "Joshua Healey @liberalterian",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Veridian-Recovery-DAO/discord-bot/issues"
+  },
+  "homepage": "https://github.com/Veridian-Recovery-DAO/discord-bot#readme",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "tsc -w & nodemon dist/index.js",
+    "deploy-commands": "ts-node src/deploy-commands.ts",
+    "lint": "eslint . --ext .ts"
+  },
+  "dependencies": {
+    "@thirdweb-dev/sdk": "^4.0.0", // Or latest v4
+    "axios": "^1.7.2",
+    "date-fns": "^3.6.0",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "ethers": "^5.7.2", // thirdweb-sdk v3/v4 requires ethers v5
+    "mongoose": "^8.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  }
+}
