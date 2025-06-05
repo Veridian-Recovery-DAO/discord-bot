@@ -1,5 +1,5 @@
 // Add as another subcommand in the 'com' command structure
-// In discord-bot/src/commands/com/tokenInfo.ts (or a new file for subcommands)
+// In discord-bot/src/commands/token/tokenInfo.ts (or a new file for subcommands)
 
 // ... (inside the main 'com' command builder)
 // .addSubcommand(subcommand =>
