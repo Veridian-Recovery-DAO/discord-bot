@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, CommandInteraction, EmbedBuilder } from 'discord.js';
+import { SlashCommandBuilder, CommandInteraction, EmbedBuilder, MessageFlags } from 'discord.js';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import { logger } from '../../utils/logger';
@@ -49,6 +49,7 @@ export async function execute(interaction: CommandInteraction) {
     if (axios.isAxiosError(error) && error.response) {
         logger.error('LLM Service Response Error:', error.response.data);
     }
-    await interaction.editReply({ content: 'Sorry, I encountered an error while trying to reach the AI assistant. Please try again later.', ephemeral: true });
+    await interaction.deferReply({ flags: MessageFlags.Ephemeral });
+    await interaction.editReply({ content: 'Sorry, I encountered an error while trying to reach the AI assistant. Please try again later.' });
   }
 }

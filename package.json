@@ -21,12 +21,12 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "@thirdweb-dev/sdk": "^4.0.0", // Or latest v4
+    "@thirdweb-dev/sdk": "^4.0.0",
     "axios": "^1.7.2",
     "date-fns": "^3.6.0",
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5",
-    "ethers": "^5.7.2", // thirdweb-sdk v3/v4 requires ethers v5
+    "ethers": "^5.7.2",
     "mongoose": "^8.4.4"
   },
   "devDependencies": {

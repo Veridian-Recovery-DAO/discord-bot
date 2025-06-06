@@ -1,5 +1,0 @@
-fastapi
-uvicorn[standard]
-pydantic
-python-dotenv
-# Add your LLM library here, e.g., openai, transformers

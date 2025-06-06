@@ -39,6 +39,6 @@ export async function execute(interaction: CommandInteraction) {
 
   } catch (error) {
     logger.error('Error fetching NFT info:', error);
-    await interaction.editReply({ content: 'Could not fetch NFT information. Please try again later.', ephemeral: true });
+    await interaction.editReply({ content: 'Could not fetch NFT information. Please try again later.'/*, ephemeral: true */});
   }
 }

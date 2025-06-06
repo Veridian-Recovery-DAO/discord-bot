@@ -5,8 +5,8 @@
 Welcome to the Veridian Recovery DAO Discord Bot! This bot is designed to support the Veridian Recovery DAO community by providing tools and resources for addiction recovery. Key features include scheduling and listing recovery meetings, offering AI-powered psychoeducation and crisis intervention guidance, facilitating NFT purchases, interacting with the DAO's ERC20 token, and managing user account settings within the DAO.
 
 The project consists of two main components:
-1.  **Discord Bot (TypeScript):** Handles all Discord interactions, command processing, database interactions (MongoDB), and integrations with Thirdweb for NFT and token functionalities.
-2.  **LLM Service (Python):** A separate FastAPI service that interfaces with a Large Language Model trained in recovery literature to provide psychoeducational support.
+1.  **[https://github.com/Veridian-Recovery-DAO/discord-bot.git](Discord Bot = TypeScript *this repository*):** Handles all Discord interactions, command processing, database interactions (MongoDB), and integrations with Thirdweb for NFT and token functionalities.
+2.  **[https://github.com/Veridian-Recovery-DAO/llm-service.git](LLM Service - Python):** A separate FastAPI service that interfaces with a Large Language Model trained in recovery literature to provide psychoeducational support.
 
 ---
 
@@ -15,6 +15,8 @@ The project consists of two main components:
 The bot utilizes Discord slash commands. Here's a breakdown of the available commands and their functionalities:
 
 ### 🗓️ Meeting Management
+- Schedule, list, modify, and delete recovery meetings.
+- Supports recurring meetings with customizable recurrence rules.
 
 * `/schedule-meeting <name> <description> <date> <time> <duration> <room> [recurring] [recurrence_rule]`
     * **Description:** Schedules a new recovery meeting.
@@ -132,21 +134,73 @@ The bot utilizes Discord slash commands. Here's a breakdown of the available com
 * **Discord Bot Application:** Created in the [Discord Developer Portal](https://discord.com/developers/applications).
 * **Thirdweb Account:** For deploying and managing NFT and ERC20 token contracts.
 
-### 1. Discord Bot (TypeScript - `discord-bot/` directory)
+### 1. Discord Bot (TypeScript - `src/` directory)
 
-#### Installation
-1.  Navigate to the `discord-bot/` directory:
+1. **Clone the Repository**:
     ```bash
-    cd path/to/veridian-recovery-bot/discord-bot
+    git clone https://github.com/Veridian-Recovery-DAO/discord-bot.git
+    cd discord-bot
     ```
-2.  Install dependencies:
+
+2. **Install Dependencies**:
     ```bash
     npm install
-    # or
-    # pnpm install
-    # or
-    # yarn install
     ```
 
-#### Environment Variables
-Create a `.env` file in the `discord-bot/` directory by copying `.env.example` and filling in the values:
+3. **Set Up Environment Variables**:
+    Create a `.env` file in the project root and add the following variables:
+    ```env
+    DISCORD_BOT_TOKEN=<your_discord_bot_token>
+    DISCORD_CLIENT_ID=<your_discord_client_id>
+    DISCORD_GUILD_ID=<your_discord_guild_id> # Optional for guild-specific commands
+    MONGO_URI=<your_mongo_connection_string>
+    THIRDWEB_NFT_CONTRACT_ADDRESS=<your_nft_contract_address>
+    THIRDWEB_NFT_CLAIM_PAGE_URL=<your_nft_claim_page_url>
+    ERC20_TOKEN_CONTRACT_ADDRESS=<your_erc20_token_contract_address>
+    DAO_TREASURY_WALLET_ADDRESS=<your_treasury_wallet_address>
+    LLM_API_URL=<your_llm_service_url>
+    CHAIN_NAME=mumbai # Example: "mumbai" for Polygon testnet
+    ```
+
+4. **Build the Project**:
+    ```bash
+    npm run build
+    ```
+
+
+5. **Deploy Commands**:
+    ```bash
+    npm run deploy-commands
+    ```
+
+6. **Start the Bot**:
+    ```bash
+    npm start
+    ```
+
+---
+
+## 🚀 Running in Development Mode
+
+To run the bot in development mode with live updates:
+    ```
+    bash
+    npm run dev
+    ```
+
+--- 
+### 📚 Disclaimer
+This service is for informational and educational purposes only. It is not a substitute for professional medical advice, diagnosis, therapy, or crisis intervention. If you are in crisis, please contact a local emergency number or a crisis hotline immediately.
+
+--- 
+### 🤝 Contributing
+We welcome contributions to improve the service! Whether you're a developer, writer, or someone with lived recovery experience, there are many ways to get involved:
+- Code Contributions: Add features or fix bugs.
+- Content Contributions: Help curate recovery literature.
+- Feedback: Share ideas to improve the service.
+
+---
+### 🌐 Related Projects
+- Discord Bot: Veridian Recovery DAO Discord Bot
+- DAO Initiative: Veridian Recovery Network DAO
+- Together, we can build a brighter path to recovery.

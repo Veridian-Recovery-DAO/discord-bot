@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, CommandInteraction, EmbedBuilder } from 'discord.js';
+import { SlashCommandBuilder, CommandInteraction, EmbedBuilder, MessageFlags } from 'discord.js';
 import Meeting from '../../models/Meeting';
 import { format } from 'date-fns';
 import { logger } from '../../utils/logger';
@@ -58,7 +58,8 @@ export async function execute(interaction: CommandInteraction) {
 
   } catch (error) {
     logger.error('Error listing meetings:', error);
-    await interaction.editReply({ content: 'There was an error fetching meetings.', ephemeral: true });
+    await interaction.deferReply({ flags: MessageFlags.Ephemeral });
+    await interaction.editReply({ content: 'There was an error fetching meetings.' });
   }
 }
 
